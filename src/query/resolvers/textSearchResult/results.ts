@@ -8,15 +8,14 @@ export default async (
   __,
   { dataSources }: { dataSources: DataSourcesType }
 ): Promise<SubtextResult[]> => {
-  const [{ text: textToSearch }, { subTexts }] = await Promise.all([
+  const [{ text: textToSearch = '' }, { subTexts }] = await Promise.all([
     dataSources.textToSearchApi.getText(),
     dataSources.subTextApi.getSubText()
   ]);
-  const indexesCache = new Map<string, number[]>();
-
   if (!subTexts) {
     return [];
   }
+  const indexesCache = new Map<string, number[]>();
 
   return subTexts.map(search => {
     const result = indexesCache.has(search.toLowerCase())
