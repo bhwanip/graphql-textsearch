@@ -1,6 +1,7 @@
 ## Start Apollo Server
 
 ```sh
+npm install
 npm start
 ```
 
