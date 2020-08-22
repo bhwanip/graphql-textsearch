@@ -9,9 +9,7 @@ export default async (
   { input }: MutationSubmitResultsArgs,
   { dataSources }: { dataSources: DataSourcesType }
 ): Promise<SubmitResultsResponse> => {
-  const { result } = await dataSources.submitResultsApi.submitResults(
-    JSON.parse(JSON.stringify(input))
-  );
+  const { result } = await dataSources.submitResultsApi.submitResults(input);
 
   return { result, success: true };
 };
