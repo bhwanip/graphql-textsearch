@@ -12,9 +12,9 @@ npm run test:jest
 ```
 
 ## Solution Approach
-- Use Apollo REST Datasource which provides request deduplication, caching and memoization out of the box.
+- Uses Apollo REST Datasource which provides request deduplication, caching and memoization out of the box.
 
-- Use Exponential backoff strategy with infinite retries for downstream servcies
+- Uses Exponential backoff strategy with infinite retries for downstream servcies
 
 - Clear segregation of query and mutation schemas
 
