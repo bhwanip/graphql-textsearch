@@ -11,6 +11,36 @@ npm start
 npm run test:jest
 ```
 
+## Sample Query
+
+```sh
+query {
+    searchResult {
+      textToSearch {
+        text
+      }
+      subtextToSearch {
+        subTexts
+      }
+      results {
+        subtext
+        result
+      }
+    }
+  }
+```
+
+## Sample Mutation
+
+```sh
+mutation SubmitResults($input: SubmitResultsInput) {
+    submitResults(input: $input) {
+      success
+      result
+    }
+  }
+```
+
 ## Solution Approach
 - Uses Apollo REST Datasource which provides request deduplication, caching and memoization out of the box.
 
